@@ -383,7 +383,11 @@ void CmodifyNameDlg::OnBnClickedButton1()
 			itModified.Replace(L'○', L' ');
 			bChanged = true;
 		}
-
+		if (itModified.Find(L"●") != -1)
+		{
+			itModified.Replace(L'●', L' ');
+			bChanged = true;
+		}
 		if (bChanged)
 		{
 			_wrename(it.GetBuffer(), itModified.GetBuffer());
